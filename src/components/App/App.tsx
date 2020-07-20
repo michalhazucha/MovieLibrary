@@ -1,6 +1,6 @@
 import React, { useEffect,ChangeEvent } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getNameAction,setNameAction } from '../../redux/actions/actionCreators/movieActionCreators';
+import { addFavourite, getNameAction,setNameAction,toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
 import { ActionTypes } from '../../redux/actions/types';
 import './App.scss';
 import {AppState} from '../../redux/reducers/rootReducer'
@@ -16,10 +16,14 @@ function App() {
     dispatch(getNameAction(name, favourites));
     console.log(`this is a movie name ${name}`)
   };
+    const handleToggle = () => {
+    dispatch(toggleFavAction(favourites,movie));
+  };
   return (
     <div className="App">
         <input type="text" onChange={handleSetName}  ></input>
-        <button onClick={handleSearch}>hello</button>
+      <button onClick={handleSearch}>searc</button>
+      <button onClick={handleToggle}>Toggle</button>
         {movie.Title}
     </div>
   );

@@ -36,13 +36,12 @@ function* onLoadMovie({ payload, favourites }: any) {
 function* watchOnLoadMovie() {
   yield takeEvery(ActionTypes.getName, onLoadMovie);
 }
-// function* watchOnToggleMovie() {
-//   yield takeEvery(ActionTypes.toggleFavourite, onToggleMovie);
-// }
+ function* watchOnToggleMovie() {
+   yield takeEvery(ActionTypes.toggleFavourite, onToggleMovie);
+ }
 function* movieSaga() {
-  yield all([fork(watchOnLoadMovie)]);
+  yield all([fork(watchOnLoadMovie),fork(watchOnToggleMovie)]);
 }
-
 export default function* rootSaga() {
   yield all([fork(movieSaga)]);
 }

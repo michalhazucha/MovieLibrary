@@ -22,13 +22,14 @@ export const addFavourite = (movie: IMovie | any) => {
   console.log(`Adding ${movie.Title}`);
   return {
     type: ActionTypes.addFavourite,
-    movie,
+    payload:movie,
   };
 };
 export const removeFavourite = (movie: IMovie | any) => {
+  console.log(`Removing ${movie}`)
   return {
     type: ActionTypes.removeFavourite,
-    movie,
+    payload:movie,
   }
 }
 export const toggleFavAction = (favourites: Array<IMovie>, movie: IMovie | any) => {
