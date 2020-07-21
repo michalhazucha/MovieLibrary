@@ -10,7 +10,7 @@ const Favourites = () => {
     <div>
       <h1>Favourites</h1>
       {favourites.map((fav: ICard) => (
-        <Card Title={fav.Title} Poster={fav.Poster} favourites={favourites} fav={fav} />
+        <Card Title={fav.Title} Poster={fav.Poster} favourites={favourites} fav={fav} imdbID={fav.imdbID}/>
         ))}
       </div>
 

@@ -83,5 +83,6 @@ Title: string|any;
 Poster: string|any;
 favourites: Array<IMovie> | any;
 fav: IMovie | any;
+imdbID: string;
 }
 export type Dispatch = React.Dispatch<IMovieAction>;

@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { IMovieInfo } from '../../interfaces'
-import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
-import { AppState } from '../../redux/reducers/rootReducer';
-
+import { IMovieInfo } from './../../../interfaces'
+import { toggleFavAction } from './../../../redux/actions/actionCreators/movieActionCreators';
+import { AppState } from './../../../redux/reducers/rootReducer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 const Movie = ({
   Title,
   Poster,Plot,Type,Actors,Director,Writer,Awards,imdbID }: IMovieInfo) => {
@@ -23,7 +24,7 @@ const Movie = ({
       <h5>Writer: {Writer}</h5>
       <h5>Actors: {Actors}</h5>
       <h5>Awards: {Awards}</h5>
-      <button onClick={hadleToggleFavourites}>Toggle</button>
+      <button onClick={hadleToggleFavourites}>{favourites.find((fav: IMovieInfo) => fav.imdbID === imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</button>
     </Fragment>
   )
 }

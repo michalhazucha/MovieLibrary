@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../../redux/reducers/rootReducer';
 import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
-import Movie from '../Movie';
+import Movie from './Movie';
 const MovieInfo = () => {
   const dispatch = useDispatch();
     const {movie } = useSelector((state: AppState) => state.movie);
