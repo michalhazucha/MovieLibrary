@@ -40,6 +40,27 @@ export interface IMovie {
   Website: string;
   Response: string;
 }
+export interface IMovieInfo{
+  Title?: string
+  Year?: string
+  Rated?: string
+  Released?: string
+  Runtime?: string
+  Genre?: string
+  Director?: string
+  Writer?: string
+  Actors?: string
+  Plot?: string
+  Language?: string
+  Country?: string
+  Awards?: string
+  Poster?: string
+  Type?: string
+  BoxOffice?: string
+  Production?: string
+  Creator?: string
+  imdbID?:string
+}
 export interface IMovieAction {
   type: ActionTypes.setName|ActionTypes.getName | ActionTypes.fetchData | ActionTypes.addFavourite | ActionTypes.removeFavourite;
   payload: Array<IMovie> | any;
@@ -58,8 +79,8 @@ export interface ISetNameAction {
   payload: string;
 }
 export interface ICard {
-Title: string;
-Poster: string;
+Title: string|any;
+Poster: string|any;
 favourites: Array<IMovie> | any;
 fav: IMovie | any;
 }
