@@ -37,11 +37,7 @@ function App() {
             <h1>{fav.Title}</h1>
           </div>
         ))}
-
-
       </div>
-
-        
     </div>
   );
 }

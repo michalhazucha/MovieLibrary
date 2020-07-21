@@ -13,7 +13,7 @@ function* onToggleMovie({ favourites, movie }: any) {
       yield put(addFavourite(movie));
     }
   } catch (e) {
-    yield put({ type: 'USER_FETCH_FAILED', message: e.message });
+    yield put({ type: 'TOGGLE_MOVIE_FAILED', message: e.message });
   }
 }
 function* onLoadMovie({ payload, favourites }: any) {
