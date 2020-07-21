@@ -6,7 +6,6 @@ import { IMovie } from '../../interfaces';
 
 function* onToggleMovie({ favourites, movie }: any) {
   try {
-    console.log(favourites);
     if (favourites.find((fav: IMovie) => fav.imdbID === movie.imdbID)) {
       yield put(removeFavourite(movie));
     } else {

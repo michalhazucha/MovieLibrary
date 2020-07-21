@@ -1,5 +1,6 @@
 import React, { useEffect, ChangeEvent } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { useSelector, useDispatch,  } from 'react-redux';
 import {AppState} from '../../redux/reducers/rootReducer'
 import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
 
@@ -9,19 +10,16 @@ import './App.scss';
 import Search from '../Search'
 import Favourites from '../Favourites'
 import MovieInfo from '../MovieInfo'
+import Navigation from '../Navigation'
 function App() {
-  const dispatch = useDispatch();
-    const {movie } = useSelector((state: AppState) => state.movie);
-    const { favourites } = useSelector((state: AppState) => state.movie);
-     const hadleToggleFavourites = () => {
-     dispatch(toggleFavAction(favourites, movie));
-   };
+
   return (
-    <div className="App">
+    <Router>
+      <Navigation/>
       <Search/>
-      <MovieInfo/>
-      <Favourites/>
-    </div>
+      <Route exact path="/"><MovieInfo /></Route>
+      <Route path="/favourites"><Favourites/></Route>
+    </Router>
   );
 }
 

@@ -5,7 +5,6 @@ export const setNameAction = (e: React.ChangeEvent<HTMLInputElement>) => {
   return { type: ActionTypes.setName, payload: e.target.value };
 };
 export const getNameAction = (name: any, favourites: Array<IMovie>) => {
-  console.log(name)
   return {
     type:ActionTypes.getName,
     payload:name,
@@ -19,14 +18,13 @@ export const fetchDataAction = (data: IMovie) => {
   }
 }
 export const addFavourite = (movie: IMovie | any) => {
-  console.log(`Adding ${movie.Title}`);
   return {
     type: ActionTypes.addFavourite,
     payload:movie,
   };
 };
 export const removeFavourite = (movie: IMovie | any) => {
-  console.log(`Removing ${movie}`)
+
   return {
     type: ActionTypes.removeFavourite,
     payload:movie,
