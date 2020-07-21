@@ -8,9 +8,7 @@ const Favourites = () => {
   const dispatch = useDispatch();
     const { movie } = useSelector((state: AppState) => state.movie);
   const { favourites } = useSelector((state: AppState) => state.movie);
-    const hadleToggleFavourites = () => {
     dispatch(toggleFavAction(favourites, movie));
-  };
   return (
     <Fragment>
       <h1>Favourites</h1>

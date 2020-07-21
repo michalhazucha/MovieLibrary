@@ -1,15 +1,8 @@
-import React, { useEffect, ChangeEvent } from 'react';
+import React, { Fragment } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import {AppState} from '../../redux/reducers/rootReducer'
+import { AppState } from '../../redux/reducers/rootReducer';
 import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
-
-//styles
-import './App.scss';
-//components
-import Search from '../Search'
-import Favourites from '../Favourites'
-import MovieInfo from '../MovieInfo'
-function App() {
+const MovieInfo = () => {
   const dispatch = useDispatch();
     const {movie } = useSelector((state: AppState) => state.movie);
     const { favourites } = useSelector((state: AppState) => state.movie);
@@ -17,12 +10,11 @@ function App() {
      dispatch(toggleFavAction(favourites, movie));
    };
   return (
-    <div className="App">
-      <Search/>
-      <MovieInfo/>
-      <Favourites/>
-    </div>
-  );
+    <Fragment>
+      <img src={movie.Poster} alt={movie.Name}/>
+        <h1>{movie.Title}</h1>
+         <button onClick={hadleToggleFavourites}>Toggle</button>
+    </Fragment>
+  )
 }
-
-export default App;
+export default  MovieInfo
