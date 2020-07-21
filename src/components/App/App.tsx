@@ -12,13 +12,13 @@ import Favourites from '../Favourites'
 import MovieInfo from '../MovieInfo'
 import Navigation from '../Navigation'
 function App() {
-
   return (
     <Router>
       <Navigation/>
-      <Search/>
-      <Route exact path="/"><MovieInfo /></Route>
-      <Route path="/favourites"><Favourites/></Route>
+      <Search />
+      <div>  <Route exact path="/"><MovieInfo /></Route>
+      <Route path="/favourites"><Favourites/></Route></div>
+    
     </Router>
   );
 }

@@ -57,5 +57,10 @@ export interface ISetNameAction {
   readonly type: ActionTypes.setName;
   payload: string;
 }
-
+export interface ICard {
+Title: string;
+Poster: string;
+favourites: Array<IMovie> | any;
+fav: IMovie | any;
+}
 export type Dispatch = React.Dispatch<IMovieAction>;
