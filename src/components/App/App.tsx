@@ -1,10 +1,14 @@
 import React, { useEffect, ChangeEvent } from 'react';
-import {IMovie} from '../../interfaces'
 import { useSelector, useDispatch } from 'react-redux';
+import {AppState} from '../../redux/reducers/rootReducer'
 import { addFavourite, getNameAction,setNameAction,toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
 import { ActionTypes } from '../../redux/actions/types';
+import { IMovie } from '../../interfaces'
+//styles
 import './App.scss';
-import {AppState} from '../../redux/reducers/rootReducer'
+//components
+import Search from '../Search'
+
 function App() {
   const dispatch = useDispatch();
   const { name } = useSelector((state: AppState) => state.movie);
@@ -22,8 +26,7 @@ function App() {
   };
   return (
     <div className="App">
-        <input type="text" onChange={handleSetName}  ></input>
-      <button onClick={handleSearch}>searc</button>
+      <Search/>
       <button onClick={handleToggle}>Toggle</button>
       <div>
         <img src={movie.Poster} alt={movie.Name}/>
