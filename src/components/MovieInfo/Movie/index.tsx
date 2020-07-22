@@ -31,7 +31,7 @@ const Movie = (props: IMovieInfo) => {
                 <Title level={4}>Writer: </Title><Text>{props.Writer}</Text>
                 <Title level={4}>Actors: </Title><Text>{props.Actors}</Text>
                 <Title level={4}>Awards:</Title><Text>{props.Awards}</Text>
-               </Content>
+             </Content>
               
           
         <Footer> <span onClick={hadleToggleFavourites}>{favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</span></Footer></Layout>

@@ -1,7 +1,7 @@
 import React,{Fragment,ChangeEvent} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import {AppState} from '../../redux/reducers/rootReducer'
-import { getNameAction, setNameAction } from '../../redux/actions/actionCreators/movieActionCreators';
+import {AppState} from '../../../redux/reducers/rootReducer'
+import { getNameAction, setNameAction } from '../../../redux/actions/actionCreators/movieActionCreators';
 //styles
 import { Input } from 'antd';
 const { Search } = Input;
@@ -23,7 +23,7 @@ const Searcher = () => {
        placeholder="input search text"
        onChange={handleSetName}
       onSearch={handleSearch}
-      style={{ width: 200 }}
+      style={{ border: 'none' }}
     />
   )
 }

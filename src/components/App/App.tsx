@@ -1,23 +1,37 @@
-import React, { useEffect, ChangeEvent } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { useSelector, useDispatch,  } from 'react-redux';
-import {AppState} from '../../redux/reducers/rootReducer'
-import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
+import React  from 'react';
+import { BrowserRouter as Router, Route  } from 'react-router-dom';
+
+
+
 
 //styles
+import { Layout, Menu, Breadcrumb, Space, Button } from 'antd';
 import './App.scss';
 //components
-import Searcher from '../Search'
+import Searcher from '../AppBar/Searcher'
 import Favourites from '../Favourites'
 import MovieInfo from '../MovieInfo'
 import Navigation from '../Navigation'
+import AppBar from '../AppBar'
+const { Header, Content, Footer, Sider } = Layout;
 const App=()=> {
   return (
     <Router>
-      <Navigation/>
-      <Searcher />
-      <div>  <Route exact path="/"><MovieInfo /></Route>
-      <Route path="/favourites"><Favourites/></Route></div>
+      <Layout style={{ minHeight: '100vh' }}>
+        <AppBar />
+        <Layout>
+          <Sider>
+            <Navigation />
+          </Sider>
+     
+          <Space direction="horizontal" align="baseline">
+            <Route exact path="/"><MovieInfo /></Route>
+            <Route path="/favourites"><Favourites/></Route>
+          </Space>
+        </Layout>
+      
+      </Layout>
+      
     </Router>
   );
 }
