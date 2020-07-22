@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../../redux/reducers/rootReducer';
 import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
 import Movie from './Movie';
+import { Row } from 'antd';
 const MovieInfo = () => {
   const dispatch = useDispatch();
     const {movie } = useSelector((state: AppState) => state.movie);
@@ -11,8 +12,7 @@ const MovieInfo = () => {
      dispatch(toggleFavAction(favourites, movie));
    };
   return (
-    <Fragment>
-      <Movie
+<Row><Movie
         Title={movie.Title}
         Poster={movie.Poster}
         Plot={movie.Plot}
@@ -21,9 +21,11 @@ const MovieInfo = () => {
         Writer={movie.Writer}
         Actors={movie.Actors}
         Awards={movie.Awards}
-        imdbID={movie.imdbID}
-  />
-    </Fragment>
+      imdbID={movie.imdbID}
+  /></Row>
+      
+
+    
   )
 }
 export default MovieInfo

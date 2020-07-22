@@ -1,33 +1,44 @@
-import React  from 'react';
+import React,{useState}  from 'react';
 import { BrowserRouter as Router, Route  } from 'react-router-dom';
 
 
 
 
 //styles
-import { Layout, Menu, Breadcrumb, Space, Button } from 'antd';
+import { Layout, Row, Col,Space } from 'antd';
 import './App.scss';
 //components
-import Searcher from '../AppBar/Searcher'
 import Favourites from '../Favourites'
 import MovieInfo from '../MovieInfo'
 import Navigation from '../Navigation'
 import AppBar from '../AppBar'
 const { Header, Content, Footer, Sider } = Layout;
-const App=()=> {
+const App = () => {
+  const [collapsed, setCollapsed] = useState(true),
+    toggleCollapsed = () => {
+      setCollapsed(!collapsed);
+      console.log('change icon');
+    };
+  const onCollapse = (collapsed: boolean) => {
+    console.log(collapsed);
+    setCollapsed(collapsed);
+  };
+
+
+
   return (
     <Router>
       <Layout style={{ minHeight: '100vh' }}>
-        <AppBar />
+        <AppBar toggleCollapsed={toggleCollapsed} collapsed={collapsed}/>
         <Layout>
-          <Sider>
-            <Navigation />
+          <Sider trigger={null} collapsible collapsed={collapsed} onCollapse={onCollapse}>
+            <Navigation collapsed={collapsed} toggleCollapsed={toggleCollapsed} onCollapse={onCollapse}/>
           </Sider>
-     
-          <Space direction="horizontal" align="baseline">
-            <Route exact path="/"><MovieInfo /></Route>
-            <Route path="/favourites"><Favourites/></Route>
-          </Space>
+             <Route exact path="/"><Row justify="center" style={{width:"100%"}}><MovieInfo />  </Row></Route>
+          <Route path="/favourites"> <Row style={{ width: "100%" }}>
+ <Favourites /></Row></Route>  
+
+
         </Layout>
       
       </Layout>

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Menu, Button, Layout, Space } from 'antd';
+import { Menu } from 'antd';
 //Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faHeart, faHeartbeat, faFilm } from '@fortawesome/free-solid-svg-icons';
+import { faHeart,faFilm} from '@fortawesome/free-solid-svg-icons';
 import MenuItem from 'antd/lib/menu/MenuItem';
 
 const { SubMenu } = Menu;
-const Navigation = () => {
+const Navigation = (props: any) => {
   return (
 
       <Menu>

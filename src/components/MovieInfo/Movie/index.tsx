@@ -19,12 +19,12 @@ const Movie = (props: IMovieInfo) => {
   return (
     <Card>
       <Row>
-        <Col><img src={props.Poster} alt={props.Title} /></Col>
-      <Col>
-
-        <Header><h1>{props.Title}</h1></Header>
-          <Layout>
-            <Content style={{ margin: "1rem" }}>  
+        <Col span={6}><img src={props.Poster} alt={props.Title} /></Col>
+        <Col span={18}>
+       <Header><Title>{props.Title}</Title></Header>
+          <Row>
+            <Layout>
+            <Content style={{ padding: "1rem" }}>  
                <Title level={4}>Plot</Title><Text>{props.Plot}</Text>
                 <Title level={4}>Type:</Title><Text>{props.Type}</Text>
                 <Title level={4}>Director: </Title><Text>{props.Director}</Text>
@@ -32,15 +32,15 @@ const Movie = (props: IMovieInfo) => {
                 <Title level={4}>Actors: </Title><Text>{props.Actors}</Text>
                 <Title level={4}>Awards:</Title><Text>{props.Awards}</Text>
              </Content>
-              
-          
-        <Footer> <span onClick={hadleToggleFavourites}>{favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</span></Footer></Layout>
+        <Footer> <span onClick={hadleToggleFavourites}>{favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</span></Footer>
+          </Layout>
+          </Row> 
+     </Col>
         
-      </Col>
       </Row>
      
     </Card>
-    
+  
   
   ) 
 }
