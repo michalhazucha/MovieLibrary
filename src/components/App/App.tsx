@@ -7,18 +7,17 @@ import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionC
 //styles
 import './App.scss';
 //components
-import Search from '../Search'
+import Searcher from '../Search'
 import Favourites from '../Favourites'
 import MovieInfo from '../MovieInfo'
 import Navigation from '../Navigation'
-function App() {
+const App=()=> {
   return (
     <Router>
       <Navigation/>
-      <Search />
+      <Searcher />
       <div>  <Route exact path="/"><MovieInfo /></Route>
       <Route path="/favourites"><Favourites/></Route></div>
-    
     </Router>
   );
 }
