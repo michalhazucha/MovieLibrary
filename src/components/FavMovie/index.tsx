@@ -6,8 +6,10 @@ import { ICard, IMovieInfo } from '../../interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar,faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 import { useHistory } from 'react-router-dom';
-
-const Card = ({ Title, Poster, favourites, fav, imdbID }: ICard) => {
+import { Layout,Button,Card } from 'antd';
+import Favourites from '../Favourites';
+const {Meta} = Card
+const FavMovie = ({ Title, Poster, favourites, fav, imdbID }: ICard) => {
   const history = useHistory();
   const navigateTo = () => history.push('/');
   const dispatch = useDispatch();
@@ -16,18 +18,15 @@ const Card = ({ Title, Poster, favourites, fav, imdbID }: ICard) => {
        navigateTo();   
  }
   return (
-    <Fragment>
-      <div><img src={Poster} alt={Title} />
-        <h1>{Title}</h1>
-        <div>
-          <button  onClick={handleHistory}><FontAwesomeIcon icon={faEllipsisH} color="#f7f7ff" /></button>
-          <button color="#E54B4B" onClick={() => dispatch(toggleFavAction(favourites, fav))} >{favourites.find((fav: IMovieInfo) => fav.imdbID === imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</button>
-        </div>
-        
-        
-      </div>
-      
-    </Fragment>
+    <Card hoverable cover={<img src={Poster} alt={Title} />}
+    >
+<Button type="text"  onClick={handleHistory}><FontAwesomeIcon icon={faEllipsisH} color="#f7f7ff" /></Button>
+        <Button type="text" color="#E54B4B" onClick={() => dispatch(toggleFavAction(favourites, fav))} >{favourites.find((fav: IMovieInfo) => fav.imdbID === imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</Button>
+
+  
+   </Card>
+    
+
   )
 }
-export default Card
+export default FavMovie

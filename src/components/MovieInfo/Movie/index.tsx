@@ -6,7 +6,7 @@ import { AppState } from './../../../redux/reducers/rootReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 //styles
-import { Layout,Row,Col,Card,Typography,Space } from 'antd';
+import { Layout,Row,Col,Card,Typography,Button } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 const {Title,Text}=Typography
 const Movie = (props: IMovieInfo) => {
@@ -32,7 +32,7 @@ const Movie = (props: IMovieInfo) => {
                 <Title level={4}>Actors: </Title><Text>{props.Actors}</Text>
                 <Title level={4}>Awards:</Title><Text>{props.Awards}</Text>
              </Content>
-        <Footer> <span onClick={hadleToggleFavourites}>{favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</span></Footer>
+        <Footer> <Button type="text" onClick={hadleToggleFavourites}>{favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</Button></Footer>
           </Layout>
           </Row> 
      </Col>

@@ -3,17 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ICard, IMovie, IMovieInfo } from '../../interfaces'
 import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
 import { AppState } from '../../redux/reducers/rootReducer';
-import Card from '../Card'
+import FavMovie from '../FavMovie'
+import { Row, Typography } from 'antd';
+const { Title } =Typography 
 const Favourites = () => {
   const { favourites } = useSelector((state: AppState) => state.movie);
   return (
-    <div>
-      <h1>Favourites</h1>
-      {favourites.map((fav: ICard) => (
-        <Card Title={fav.Title} Poster={fav.Poster} favourites={favourites} fav={fav} imdbID={fav.imdbID}/>
-        ))}
-      </div>
 
+ <Row justify="space-around">
+ {favourites.map((fav: ICard) => (
+        <FavMovie Title={fav.Title} Poster={fav.Poster} favourites={favourites} fav={fav} imdbID={fav.imdbID}/>
+        ))}
+ </Row>
+    
   )
 }
 export default Favourites
