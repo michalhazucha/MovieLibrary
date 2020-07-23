@@ -10,7 +10,7 @@ const Favourites = () => {
   const { favourites } = useSelector((state: AppState) => state.movie);
   return (
 
- <Row justify="space-around">
+ <Row justify="start">
  {favourites.map((fav: ICard) => (
         <FavMovie Title={fav.Title} Poster={fav.Poster} favourites={favourites} fav={fav} imdbID={fav.imdbID}/>
         ))}

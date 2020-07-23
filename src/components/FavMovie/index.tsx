@@ -6,7 +6,7 @@ import { ICard, IMovieInfo } from '../../interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar,faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 import { useHistory } from 'react-router-dom';
-import { Layout,Button,Card } from 'antd';
+import { Row,Space,Button,Card } from 'antd';
 import Favourites from '../Favourites';
 const {Meta} = Card
 const FavMovie = ({ Title, Poster, favourites, fav, imdbID }: ICard) => {
@@ -18,15 +18,13 @@ const FavMovie = ({ Title, Poster, favourites, fav, imdbID }: ICard) => {
        navigateTo();   
  }
   return (
-    <Card hoverable cover={<img src={Poster} alt={Title} />}
-    >
-<Button type="text"  onClick={handleHistory}><FontAwesomeIcon icon={faEllipsisH} color="#f7f7ff" /></Button>
-        <Button type="text" color="#E54B4B" onClick={() => dispatch(toggleFavAction(favourites, fav))} >{favourites.find((fav: IMovieInfo) => fav.imdbID === imdbID) ? <FontAwesomeIcon icon={faStar} size="lg" color="#eec643" /> : <FontAwesomeIcon icon={faStar} size="lg" color="#5c5c5c" />}</Button>
-
-  
+<Card
+cover={<img src={Poster} alt={Title} />}>
+  <Space align="end" size="large" >
+  <Button type="text"  onClick={handleHistory}><FontAwesomeIcon icon={faEllipsisH} color="#f7f7ff" /></Button>
+   <Button type="text" color="#E54B4B" onClick={() => dispatch(toggleFavAction(favourites, fav))} > <FontAwesomeIcon icon={faStar} size="lg" color={favourites.find((fav: IMovieInfo) => fav.imdbID === imdbID) ? "#eec643" :"#5c5c5c" } /> </Button>
+   </Space>
    </Card>
-    
-
   )
 }
 export default FavMovie

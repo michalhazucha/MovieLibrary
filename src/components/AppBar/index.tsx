@@ -9,7 +9,7 @@ import { faEllipsisH, faHeart, faBars, faTimes } from '@fortawesome/free-solid-s
 import { Layout, PageHeader, Space, Row, Col, Divider, Badge } from 'antd';
 import Searcher from './Searcher';
 //styles
-
+import './AppBar.scss';
 const { Sider } = Layout;
 const AppBar = ({ toggleCollapsed, collapsed }: any) => {
   const { favourites } = useSelector((state: AppState) => state.movie);
@@ -29,7 +29,7 @@ const AppBar = ({ toggleCollapsed, collapsed }: any) => {
             <Col span={8}>
               <Link to="/favourites">
                 <Badge count={favourites.length} offset={[5, -5]}>
-                  <FontAwesomeIcon icon={faHeart} color="#e54b4b" size="lg" />
+                  <FontAwesomeIcon icon={faHeart} color="#a31f3b" size="lg" />
                 </Badge>
               </Link>
             </Col>

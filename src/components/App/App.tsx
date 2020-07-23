@@ -1,4 +1,4 @@
-import React,{useState}  from 'react';
+import React,{Fragment,useState}  from 'react';
 import { BrowserRouter as Router, Route  } from 'react-router-dom';
 
 
@@ -28,20 +28,20 @@ const App = () => {
 
   return (
     <Router>
-      <Layout style={{ minHeight: '100vh' }}>
-        <AppBar toggleCollapsed={toggleCollapsed} collapsed={collapsed}/>
+      <Fragment>
+          <AppBar toggleCollapsed={toggleCollapsed} collapsed={collapsed} />  
+        
         <Layout>
           <Sider trigger={null} collapsible collapsed={collapsed} onCollapse={onCollapse}>
             <Navigation collapsed={collapsed} toggleCollapsed={toggleCollapsed} onCollapse={onCollapse}/>
           </Sider>
              <Route exact path="/"><Row justify="center" style={{width:"100%"}}><MovieInfo />  </Row></Route>
           <Route path="/favourites"> <Row style={{ width: "100%" }}>
- <Favourites /></Row></Route>  
-
-
-        </Layout>
-      
+            <Favourites />
+          </Row>
+          </Route>        
       </Layout>
+    </Fragment>
       
     </Router>
   );

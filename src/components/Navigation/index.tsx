@@ -11,8 +11,8 @@ const Navigation = (props: any) => {
   return (
 
       <Menu>
-        <MenuItem key="1" icon={<FontAwesomeIcon icon={faFilm} size="lg" style={{ marginRight: '2.5rem' }} />}><Link to="/">MovieInfo</Link></MenuItem>
-        <MenuItem key="2" icon={<FontAwesomeIcon icon={faHeart} color="#e54b4b" size="lg" style={{ marginRight: '2.5rem' }} />}><Link to="/favourites">Favourites</Link></MenuItem>
+        <MenuItem key="1" icon={<FontAwesomeIcon icon={faFilm} color="#474747"  size="lg" style={{ marginRight: '2.5rem' }} />}><Link to="/">MovieInfo</Link></MenuItem>
+        <MenuItem key="2" icon={<FontAwesomeIcon icon={faHeart} color="#474747" size="lg" style={{ marginRight: '2.5rem' }} />}><Link to="/favourites">Favourites</Link></MenuItem>
       </Menu>
 
   )
