@@ -10,12 +10,10 @@ import { Row,Space,Button,Card } from 'antd';
 import Favourites from '../Favourites';
 const {Meta} = Card
 const FavMovie = ({ Title, Poster, favourites, fav, imdbID }: ICard) => {
-  const history = useHistory();
-  const navigateTo = () => history.push('/');
   const dispatch = useDispatch();
   const handleHistory = () => {
     dispatch(getNameAction(fav.Title, favourites));
-       navigateTo();   
+      
  }
   return (
 <Card
