@@ -33,11 +33,11 @@ const App = () => {
       <Fragment>
           <AppBar toggleCollapsed={toggleCollapsed} collapsed={collapsed}  onCollapse={onCollapse}/>  
         
-        <Layout>
+        <Layout className="layout">
           <Sider trigger={null} collapsible collapsed={true} >
             <Navigation collapsed={false} toggleCollapsed={console.log('hello')} /> 
           </Sider>
-          <Layout>
+          <Layout className="max-height">
              <Drawer placement="left"
           closable={false}
           onClose={onClose}
@@ -47,11 +47,12 @@ const App = () => {
         > 
               <Navigation collapsed={collapsed} toggleCollapsed={toggleCollapsed} onCollapse={onCollapse} style={{ background: "#141414" }}>Hello</Navigation>
             </Drawer>
-            <Route exact path="/"><Row justify="center" style={{ width: "100%" }}><MovieInfo />  </Row></Route>
+            <Route exact path="/"><Row justify="center" align="middle" className="center"><MovieInfo /></Row></Route>
           <Route path="/favourites"> <Row style={{ width: "100%" }}>
             <Favourites />
           </Row>
-          </Route>    </Layout>
+            </Route>
+          </Layout>
                  
       </Layout>
     </Fragment>

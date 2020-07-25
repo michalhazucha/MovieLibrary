@@ -2,3 +2,9 @@
   background: #141414;
   padding:16 8px   ;
 }
+.ant-menu-inline.ant-menu-vertical.ant-menu-vertical-left {
+    border-right:transparent;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+	background-color: transparent;
+}
