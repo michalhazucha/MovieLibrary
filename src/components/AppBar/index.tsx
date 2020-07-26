@@ -17,7 +17,7 @@ const AppBar = ({ toggleCollapsed, collapsed }: any) => {
   return (
     <PageHeader className="site-page-header" title="">
       <Row>
-        <Col span={8} onClick={toggleCollapsed}>
+        <Col className="p-left" span={8} onClick={toggleCollapsed}>
           {collapsed ? <FontAwesomeIcon icon={faBars} size="lg" /> : <FontAwesomeIcon icon={faTimes} size="lg" />}
         </Col>
         <Col span={8}>

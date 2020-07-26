@@ -1,3 +1,7 @@
+.menu-wrapper{
+  border:none;
+  z-index:199;
+}
 .ant-drawer-body{
   background: #141414;
   padding:16 8px   ;
@@ -7,4 +11,31 @@
 }
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
 	background-color: transparent;
+}
+.ant-menu-item{ 
+  &-only-child{
+    &{
+      .ant-menu-item-selected{
+color:#fff}
+}
+}
+   & a:hover{
+color:#e40914
+ }
+ &-active{
+color:#e40914
+ }
+ &-selected{
+color:#e40914
+ }
+  a{
+    color:rgb(255,255,255);
+  };
+}
+
+.ant-menu-item.ant-menu-item-only-child.ant-menu-item-selected{
+  &:hover{
+    color:#e40914
+  }
+  color:#fff
 }

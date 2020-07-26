@@ -2,7 +2,7 @@ import { ActionTypes } from '../types';
 import { IMovie } from '../../../interfaces';
 
 export const setNameAction = (e: React.ChangeEvent<HTMLInputElement>) => {
-  return { type: ActionTypes.setName, payload: e.target.value };
+  return { type: ActionTypes.setName, payload: e };
 };
 export const getNameAction = (name: any, favourites: Array<IMovie>) => {
   return {

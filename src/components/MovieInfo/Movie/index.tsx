@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 //styles
 import './Movie.scss'
-import { Layout,Row,Col,Card,Typography,Button } from 'antd';
+import { Layout,Row,Col,Space,Card,Typography,Button } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 const {Title,Text}=Typography
 const Movie = (props: IMovieInfo) => {
@@ -18,14 +18,17 @@ const Movie = (props: IMovieInfo) => {
      dispatch(toggleFavAction(favourites, movie));
      };
   return (
-    <Card>
+    <Card  className="movie-info">
       <Row>
-        <Col xs={24} md={6} ><img src={props.Poster}  alt={props.Title} /></Col>
-        <Col xs={24} md={18}>
-      
-          <Row color="primary">
-            <Layout> <Header className="text-secondary"><Title level={1}>{props.Title}</Title></Header>
-            <Content style={{ padding: "1rem" }}>  
+        <Col xs={24} md={6} >
+          <Row><img src={props.Poster} alt={props.Title} /></Row>
+          <Row> <Space className="center margin-lg"><Button type="text" onClick={hadleToggleFavourites}><FontAwesomeIcon icon={faStar} size="lg" className="font-size-lg" color={favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? "#eec643" : "#5c5c5c"} /></Button></Space></Row>
+        </Col>
+        <Col xs={24} md={18} className="padding-x-low">
+          <Row>
+            <Layout > 
+              <Content className="movie-info-content">  
+                <Title level={1}>{props.Title}</Title>
                <Title level={4}>Plot</Title><Text>{props.Plot}</Text>
                 <Title level={4}>Type:</Title><Text>{props.Type}</Text>
                 <Title level={4}>Director: </Title><Text>{props.Director}</Text>
@@ -33,7 +36,7 @@ const Movie = (props: IMovieInfo) => {
                 <Title level={4}>Actors: </Title><Text>{props.Actors}</Text>
                 <Title level={4}>Awards:</Title><Text>{props.Awards}</Text>
              </Content>
-        <Footer> <Button type="text" onClick={hadleToggleFavourites}><FontAwesomeIcon icon={faStar} size="lg" color={favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? "#eec643":"#5c5c5c"} /></Button></Footer>
+       
           </Layout>
           </Row> 
      </Col>

@@ -2,3 +2,27 @@ img{
   max-width: 100%;
   height: auto;
 }
+.padding-x-low{
+  padding: 0 1rem;
+}
+.margin-lg{
+  margin:40% 0;
+}
+.center{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.movie-info {
+  border:none;
+  background: #101517;
+  &-content{
+  background:#101517;
+}
+.font-size-lg{
+  font-size: 1.5rem;
+}
+ &-footer{
+  background:#101517;
+}
+}

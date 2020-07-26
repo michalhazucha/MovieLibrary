@@ -33,7 +33,8 @@ cover={<div className="favourite-movie-body">
   <img src={Poster} alt={Title} className="ant-card-img" />
   <div className="favourite-movie-hover">
     <div className="favourite-movie-info">
-      <Text className="movie-title">{fav.Title}</Text></div>
+      <Text className="movie-title">{fav.Title}</Text>
+     </div>
   <div className="favourite-movie-buttons">
   <Button type="text"  onClick={handleHistory}><FontAwesomeIcon icon={faEllipsisH} color="#f7f7ff" /></Button>
   <Button type="text" color="#E54B4B" onClick={handleToggleFavourites} > <FontAwesomeIcon icon={faStar} size="lg" color={favourites.find((fav: IMovieInfo) => fav.imdbID === imdbID) ? "#eec643" : "#5c5c5c"} /></Button></div>

@@ -1,0 +1,10 @@
+.section-header{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    h1{
+          margin: 1rem 0;
+      font-size: 1.5rem;
+    }
+}

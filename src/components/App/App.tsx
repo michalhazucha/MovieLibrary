@@ -43,7 +43,8 @@ const App = () => {
           onClose={onClose}
               visible={!
                 collapsed}
-          key="left"
+              key="left"
+              className="drawer-padding"
         > 
               <Navigation collapsed={collapsed} toggleCollapsed={toggleCollapsed} onCollapse={onCollapse} style={{ background: "#141414" }}>Hello</Navigation>
             </Drawer>

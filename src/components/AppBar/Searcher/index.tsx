@@ -1,4 +1,4 @@
-import React,{Fragment,ChangeEvent} from 'react'
+import React,{Fragment,ChangeEvent,useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import {AppState} from '../../../redux/reducers/rootReducer'
 import { getNameAction, setNameAction } from '../../../redux/actions/actionCreators/movieActionCreators';
@@ -10,20 +10,24 @@ const Searcher = () => {
   const dispatch = useDispatch(); 
   const { name } = useSelector((state: AppState) => state.movie);
   const {favourites } = useSelector((state: AppState) => state.movie);
-   const history = useHistory();
+  const history = useHistory();
+  const [movieName, setMovieName] = useState();
+  
   const navigateTo = () => history.push('/');
-  const handleSetName = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleSetName = (e: ChangeEvent<HTMLInputElement>|any) => {
     dispatch(setNameAction(e));
   };
   const handleSearch = () => {
-    dispatch(getNameAction(name, favourites));
+    dispatch(getNameAction(movieName, favourites));
+    console.log(movieName)
+    handleSetName(movieName);
      navigateTo();   
   };
 
    return (
      <Search
        placeholder="input search text"
-       onChange={handleSetName}
+       onChange={(e)=>setMovieName(e.target.value)}
       onSearch={handleSearch}
       style={{ border: 'none' }}
     />

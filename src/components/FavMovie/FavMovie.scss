@@ -17,6 +17,7 @@
       z-index: 100;   
   }
   .favourite-movie-hover{
+      padding: 1rem;
     z-index: 98;
     display: flex;
     height: 100%;
@@ -52,7 +53,16 @@
       font-size:1.5rem;
       text-align: center;
     }
-   
+   .movie-title{
+      z-index: 1000;
+      display:none;
+      font-weight: bold;
+      color:#fff;
+      font-size:1.5rem;
+      text-align: center;
+    }
+ 
+    }
   }
     .favourite-movie-buttons{
     display: none;
@@ -69,8 +79,8 @@
   cursor: pointer;
   border-radius: 5px;
   }
-  }
-  
+
+
 &:hover{
 .favourite-movie-hover{
    background-color: rgba(14, 14, 14, 0.774);
@@ -82,13 +92,10 @@
   .favourite-movie-info{
     .movie-title{
       display:flex;
-      
     }
   }
 }
 }
-
-
 .favourite-movie-card{
   .ant-card-body{
     display: none;
