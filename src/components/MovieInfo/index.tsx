@@ -1,13 +1,10 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { AppState } from '../../redux/reducers/rootReducer';
-import { toggleFavAction } from '../../redux/actions/actionCreators/movieActionCreators';
 import Movie from './Movie';
-import Searcher from '../AppBar/Searcher/index'
-import { Row, Col, Space, Typography } from 'antd';
+import { Row, Space, Typography } from 'antd';
 import './MovieInfo.scss';
-import Message from '../Message';
-const {Title, Text} =Typography
+const {Title} =Typography
 const MovieInfo = () => {
   const { movie } = useSelector((state: AppState) => state.movie);
   const { name } = useSelector((state: AppState) => state.movie);
@@ -26,11 +23,11 @@ const MovieInfo = () => {
           imdbID={movie.imdbID}
         />
       </Row>)
-  } else if (movie.Response=='False' && name !== '') {
+  } else if (movie.Response==='False' && name !== '') {
     return (
     <Row> <Space direction="vertical">
-        <Title level={1} className="text-welcome text-center" > Ooops!😯 This movie was not found</Title>
-        <Title level={3}>Please check if you typed your movie Title Correctly or search for another movie 😊</Title>
+        <Title level={1} className="text-welcome text-center" > Ooops! <span>😯</span> This movie was not found</Title>
+        <Title level={3}>Please check if you typed your movie Title Correctly or search for another movie <span>😊</span> </Title>
       </Space></Row>)
     
   } else {

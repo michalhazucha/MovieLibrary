@@ -1,4 +1,4 @@
-import { put, call, takeEvery, all, fork, takeLatest } from 'redux-saga/effects';
+import { put, takeEvery, all, fork } from 'redux-saga/effects';
 import axios from 'axios';
 import { fetchDataAction, removeFavourite, addFavourite } from '../actions/actionCreators/movieActionCreators';
 import { ActionTypes } from '../actions/types';

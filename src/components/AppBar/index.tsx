@@ -5,15 +5,13 @@ import { AppState } from '../../redux/reducers/rootReducer';
 //components
 import './AppBar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisH, faHeart, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Layout, PageHeader, Space, Row, Col, Divider, Badge } from 'antd';
+import {  faHeart, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {PageHeader, Row, Col, Badge } from 'antd';
 import Searcher from './Searcher';
 //styles
 import './AppBar.scss';
-const { Sider } = Layout;
 const AppBar = ({ toggleCollapsed, collapsed }: any) => {
   const { favourites } = useSelector((state: AppState) => state.movie);
-  console.log(collapsed);
   return (
     <PageHeader className="site-page-header" title="">
       <Row>

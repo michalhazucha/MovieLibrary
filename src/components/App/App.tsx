@@ -1,28 +1,21 @@
 import React,{Fragment,useState}  from 'react';
 import { BrowserRouter as Router, Route  } from 'react-router-dom';
-
-
-
-
 //styles
-import { Layout, Row, Col,Space,Drawer } from 'antd';
+import { Layout, Row,Drawer } from 'antd';
 import './App.scss';
 //components
 import Favourites from '../Favourites'
 import MovieInfo from '../MovieInfo'
 import Navigation from '../Navigation'
 import AppBar from '../AppBar'
-const { Header, Content, Footer, Sider } = Layout;
+const { Sider } = Layout;
 const App = () => {
   const [collapsed, setCollapsed] = useState(true);
-  const [visible, setVisible] = useState(false);
    const toggleCollapsed = () => {
       setCollapsed(!collapsed);
-     console.log('change icon');
      onClose();
     };
   const onCollapse = (collapsed: boolean) => {
-    console.log(collapsed);
     setCollapsed(collapsed);
   };
   const onClose = () => {
@@ -35,7 +28,7 @@ const App = () => {
         
         <Layout className="layout">
           <Sider trigger={null} collapsible collapsed={true} >
-            <Navigation collapsed={false} toggleCollapsed={console.log('hello')} /> 
+            <Navigation collapsed={false}  /> 
           </Sider>
           <Layout className="max-height">
              <Drawer placement="left"

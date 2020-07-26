@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { IMovieInfo } from './../../../interfaces'
 import { toggleFavAction } from './../../../redux/actions/actionCreators/movieActionCreators';
@@ -7,16 +7,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 //styles
 import './Movie.scss'
-import { Layout,Row,Col,Space,Card,Typography,Button } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
+import { Layout,Row,Col,Space,Card,Typography,Button,message } from 'antd';
+const {Content } = Layout;
 const {Title,Text}=Typography
 const Movie = (props: IMovieInfo) => {
   const dispatch = useDispatch();
     const {movie } = useSelector((state: AppState) => state.movie);
     const { favourites } = useSelector((state: AppState) => state.movie);
      const hadleToggleFavourites = () => {
-     dispatch(toggleFavAction(favourites, movie));
+       dispatch(toggleFavAction(favourites, movie));
+        favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? success('removed from'): success('added to')
      };
+  const success = (content:string) => {
+  message.success(`Movie was successfully ${content} favourites`);
+};
   return (
     <Card  className="movie-info">
       <Row>

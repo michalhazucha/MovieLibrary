@@ -1,4 +1,4 @@
-import React,{Fragment,ChangeEvent,useState} from 'react'
+import React,{ChangeEvent,useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import {AppState} from '../../../redux/reducers/rootReducer'
 import { getNameAction, setNameAction } from '../../../redux/actions/actionCreators/movieActionCreators';
@@ -8,7 +8,6 @@ import { Input } from 'antd';
 const { Search } = Input;
 const Searcher = () => {
   const dispatch = useDispatch(); 
-  const { name } = useSelector((state: AppState) => state.movie);
   const {favourites } = useSelector((state: AppState) => state.movie);
   const history = useHistory();
   const [movieName, setMovieName] = useState();
@@ -19,7 +18,6 @@ const Searcher = () => {
   };
   const handleSearch = () => {
     dispatch(getNameAction(movieName, favourites));
-    console.log(movieName)
     handleSetName(movieName);
      navigateTo();   
   };

@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars,faHeart,faFilm,faTimes} from '@fortawesome/free-solid-svg-icons';
 import MenuItem from 'antd/lib/menu/MenuItem';
 import './Navigation.scss';
-const { SubMenu } = Menu;
 const Navigation = (props: any) => {
   return (
     <Menu className="menu-wrapper">
