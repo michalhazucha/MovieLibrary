@@ -34,15 +34,14 @@ const Movie = (props: IMovieInfo) => {
           <Row>
             <Layout>
               <Content className="movie-info-content">
-                <Row>
-                  <Space direction="horizontal" align="baseline" size="large">
-                    <Title level={1}>{props.Title}</Title>
-                    <Button type="text" onClick={hadleToggleFavourites}>
-                      <FontAwesomeIcon icon={faStar} size="lg" className="font-size-lg" color={favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? '#eec643' : '#5c5c5c'} />
-                    </Button>
-                  </Space>
+                <Row className="center-y">
+                  <Title level={1} className="margin-y-low">
+                    {props.Title}
+                  </Title>
+                  <Button type="text" onClick={hadleToggleFavourites} className="margin-y-low">
+                    <FontAwesomeIcon icon={faStar} size="lg" className="font-size-lg" color={favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? '#eec643' : '#5c5c5c'} />
+                  </Button>
                 </Row>
-
                 <Title level={4}>Plot</Title>
                 <Text>{props.Plot}</Text>
                 <Title level={4}>Type:</Title>

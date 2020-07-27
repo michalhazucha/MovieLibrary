@@ -1,12 +1,20 @@
+
 img{
   max-width: 100%;
   height: auto;
+}
+.center-y{
+  justify-content: flex-start;
+  align-items: center;
 }
 .padding-x-low{
   padding: 0 1rem;
 }
 .margin-lg{
   margin:40% 0;
+}
+.margin-y-low{
+  margin: 1rem 0;
 }
 .center{
   display:flex;
