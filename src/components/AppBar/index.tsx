@@ -5,8 +5,8 @@ import { AppState } from '../../redux/reducers/rootReducer';
 //components
 import './AppBar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faHeart, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import {PageHeader, Row, Col, Badge } from 'antd';
+import { faHeart, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { PageHeader, Row, Col, Badge } from 'antd';
 import Searcher from './Searcher';
 //styles
 import './AppBar.scss';

@@ -1,5 +1,12 @@
 .ant-page-header.site-page-header.ant-page-header-ghost{
+  display:flex;
+  align-items:center;
+  min-height:3%;
   background: #141414;
+}
+.ant-page-header-content{
+  width: 100%;
+  justify-content: space-between;
 }
 .p-left{
   padding-left: .5rem;;

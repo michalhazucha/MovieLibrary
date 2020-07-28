@@ -1,15 +1,12 @@
 @import '~antd/dist/antd.dark.css';
-body{
- height: 90%;
-}
-.ant-layout{
-    background-color:#1b1b1b;
-  .max-height{
-  height: 100%;
-}
+.body{
+  min-height: 100%;
 }
 .layout{
-  height: 90vh;
+  min-height: 97%;
+}
+.AppWrapper{
+  min-height: 100vh;
 }
 .center{
   width: 100%;
