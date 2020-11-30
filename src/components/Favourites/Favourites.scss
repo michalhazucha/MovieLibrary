@@ -7,4 +7,22 @@
           margin: 1rem 0;
       font-size: 1.5rem;
     }
+    .ant-radio-group.ant-radio-group-solid{
+      border-radius:10px; .ant-radio-button-wrapper{
+      border:none;
+    }
+   .radio {
+    color: #a61d24 !important;
+    background: #161616 !important;
+    border:none !important;
+    &:hover{
+      color:#fff!important
+    }
+     &::selection{
+      color:#fff!important
+    }
+  }
+    }
+   
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before{border:none!important}
 }

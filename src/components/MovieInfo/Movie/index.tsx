@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IMovieInfo } from './../../../interfaces';
 import { toggleFavAction } from './../../../redux/actions/actionCreators/movieActionCreators';
+import { ToggleFavourites } from '../../../handlers/handlers';
 import { AppState } from './../../../redux/reducers/rootReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -15,8 +16,7 @@ const Movie = (props: IMovieInfo) => {
   const { movie } = useSelector((state: AppState) => state.movie);
   const { favourites } = useSelector((state: AppState) => state.movie);
   const hadleToggleFavourites = () => {
-    dispatch(toggleFavAction(favourites, movie));
-    favourites.find((fav: IMovieInfo) => fav.imdbID === props.imdbID) ? success('removed from') : success('added to');
+    ToggleFavourites(dispatch, favourites, movie, movie.imdbId);
   };
   const success = (content: string) => {
     message.success(`Movie was successfully ${content} favourites`);
